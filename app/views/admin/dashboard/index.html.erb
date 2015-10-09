@@ -1,0 +1,19 @@
+<h1>Tanfolyamjaink</h1>
+
+<%= link_to 'New', new_admin_course_path %>
+
+<table border="1">
+<% @courses.each do |l| %>
+<tr>
+<td><%= l.datum %></td>
+<td><%= link_to l.name, admin_course_lessons_path(l.id) %></td>
+<td><%= link_to "Edit", edit_admin_course_path(l) %> <%= link_to "Delete", admin_course_path(l), method: :delete, data: { confirm: "Biztos?", tanfolyam: 'ruby' } %> 
+
+
+<%#= link_to "Lessons", admin_course_lessons_path(l) %></td>
+</tr>
+<% end %>
+</table>
+
+<% console %>
+

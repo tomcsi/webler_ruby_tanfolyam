@@ -1,0 +1,16 @@
+<h1><%= @course.name %> lessons</h1>
+
+<%= link_to "New", new_admin_course_lesson_path(@course.id) %>
+
+<table border="1">
+<% @lessons.each do |l| %>
+<tr>
+<td><%= l.datum %></td>
+<td><%= l.allapot %></td>
+<td><%= link_to "Edit", edit_admin_course_lesson_path(@course.id, l.id) %></td>
+</tr>
+<% end %>
+</table>
+
+<% console %>
+

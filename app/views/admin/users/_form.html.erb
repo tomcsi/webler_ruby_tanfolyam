@@ -1,0 +1,24 @@
+<% if flash[:error] %>
+<div class='error'><%= flash[:error] %></div>
+<% end %>
+<%= form_for [:admin, @user] do |f| %>
+  <%= f.label :firtname %>
+  <%= f.text_field :firstname %><br/>
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname %><br/>
+  <%= f.label :birthdate %>
+  <%= f.date_select :birthdate %><br/>
+  <%= link_to 'Mégsem', admin_users_path %>
+  <%= f.submit 'Mentés' %>
+
+  <br/><br/>
+  <% @courses.includes(:lessons).each do |c| %>
+  <%= c.name %>:<br/>
+      <% c.lessons.each do |l| %>
+      <%= check_box_tag "lesson[#{l.id}]", 1, @user.presences.map { |p| p.lesson_id }.include?(l.id) %><%= label_tag "lesson_#{l.id}", l.datum %><br/>
+      <% end %>
+  <% end %>
+
+<% end %>
+
+

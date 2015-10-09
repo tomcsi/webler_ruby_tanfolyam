@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+<div class='error'><%= flash[:error] %></div>
+<% end %>
+<%= form_for [:admin, @course] do |f| %>
+<%= f.label :datum %>
+<%= f.date_select :datum %><br/>
+<%= f.label :name %>
+<%= f.text_field :name %><br/>
+<%= link_to 'Mégsem', admin_path %>
+<%= f.submit 'Mentés' %>
+<% end %>
