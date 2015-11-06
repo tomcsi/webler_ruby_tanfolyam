@@ -1,4 +1,5 @@
-class Admin::LessonsController < ApplicationController
+class Admin::LessonsController < Admin::AdminController
+
     def index
         @course = Course.find(params[:course_id])
         @lessons = @course.lessons

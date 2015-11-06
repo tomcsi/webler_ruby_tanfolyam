@@ -1,0 +1,12 @@
+%table.table.table-striped
+  %tr
+    %td Dátum
+    %td Neve
+  - @courses.each do |course|
+    %tr
+      %td
+        = course.datum
+      %td
+        = course.name
+   
+  

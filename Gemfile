@@ -45,3 +45,10 @@ group :development do
   gem 'spring'
 end
 
+gem 'twitter-bootstrap-rails', '~> 3.2'
+gem 'less-rails'
+gem 'haml'
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n-views'
+
