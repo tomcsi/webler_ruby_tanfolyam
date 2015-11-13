@@ -1,11 +1,13 @@
 <% if flash[:error] %>
 <div class='error'><%= flash[:error] %></div>
 <% end %>
-<%= form_for [:admin, @course] do |f| %>
+<%= form_for [:admin, @course], html: { multipart: true } do |f| %>
 <%= f.label :datum %>
 <%= f.date_select :datum %><br/>
 <%= f.label :name %>
 <%= f.text_field :name %><br/>
+<%= f.label :logo %>
+<%= f.file_field :logo %><br/>
 <%= link_to 'Mégsem', admin_path %>
 <%= f.submit 'Mentés' %>
 <% end %>

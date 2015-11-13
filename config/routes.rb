@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/' => 'dashboard#index'
     get '/tesztemail' => 'dashboard#tesztemail'
+    get '/incrementdate' => 'dashboard#incrementdate'
+    get '/pdf' => 'dashboard#pdf'
     resources :courses do
         resources :lessons
     end

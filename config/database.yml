@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: tanfolyam_production
-  username: tanfolyam
-  password: <%= ENV['TANFOLYAM_DATABASE_PASSWORD'] %>
+  database: tanfolyam_development
+#  username: tanfolyam
+#  password: <%= ENV['TANFOLYAM_DATABASE_PASSWORD'] %>

@@ -6,10 +6,15 @@
 
 <%= link_to 'Teszt email', admin_tesztemail_path %>
 
+<%= link_to 'Dátum növelése', admin_incrementdate_path %>
+
+<%= link_to 'PDF', admin_pdf_path %>
+
 <table border="1">
 <% @courses.each do |l| %>
 <tr>
 <td><%= l.datum %></td>
+<td><%= image_tag l.logo.url(:thumb) %></td>
 <td><%= link_to l.name, admin_course_lessons_path(l.id) %></td>
 <td><%= link_to "Edit", edit_admin_course_path(l) %> <%= link_to "Delete", admin_course_path(l), method: :delete, data: { confirm: "Biztos?", tanfolyam: 'ruby' } %> 
 
@@ -19,5 +24,4 @@
 <% end %>
 </table>
 
-<% console %>
 
