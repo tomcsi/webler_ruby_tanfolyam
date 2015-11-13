@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :teachers
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'dashboard#index'
+    get '/tesztemail' => 'dashboard#tesztemail'
     resources :courses do
         resources :lessons
     end

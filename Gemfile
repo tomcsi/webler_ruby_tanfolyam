@@ -51,4 +51,7 @@ gem 'haml'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'devise-i18n-views'
+gem 'activeadmin', '= 1.0.0pre2'
+gem 'delayed_job_active_record'
+gem 'daemons'
 
